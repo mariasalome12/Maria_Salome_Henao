@@ -1,0 +1,8 @@
+El número máximo flotante(double) en python es el 1.7976931348623157e+308 la suma de ellos en python entrega un inf
+
+x = (1.7976931348623157e+308) + (1.7976931348623157e+308)
+print(x)
+entrega de la consola:
+runfile('C:/Users/USER/Downloads/untitled0.py', wdir='C:/Users/USER/Downloads')
+Reloaded modules: jupyter_client.session, zmq.eventloop, zmq.eventloop.ioloop, tornado.platform, tornado.platform.asyncio, tornado.gen, zmq.eventloop.zmqstream, jupyter_client.jsonutil, jupyter_client.adapter, spyder, spyder.pil_patch, PIL, PIL._version, PIL.Image, PIL.ImageMode, PIL.TiffTags, PIL._binary, PIL._util, PIL._imaging, cffi, cffi.api, cffi.lock, cffi.error, cffi.model
+inf
