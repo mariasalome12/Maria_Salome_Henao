@@ -1,0 +1,131 @@
+
+		## Punto 1
+
+Def Digitos(number:int):int
+	if number == 0:
+		return 0
+	else:
+		last_num = abs(number % 10)
+		if last_num =! 0 and (last_num%2==0 and last_num%4==0):
+			return 1 + Digitos(number/10)
+		else:
+			return Digitos(number/10)
+		end
+	end
+end
+
+
+		## Punto 2
+		
+Def Invertir(word:string):string
+	longitud = length(word)
+	mitad = longitud/2
+	
+	if mitad == 0:
+		segund_mitad = subcadena(word, mitad + 1, longitud)
+	else:
+		segund_mitad = subcadena(word, mitad + 2, longitud)
+	end
+	
+	mitad_invertida = InvertirCad(segund_mitad)
+	
+	if mitad == 0:
+		result = subcadena(word, 1, mitad) + mitad_invertida + subcadena(word, mitad + 1, longitud)
+	else:
+		result = subcadena(word, 1, mitad) + mitad_invertida + subcadena(word, mitad + 2, longitud)
+		
+	end
+	
+	return result
+end
+
+Def InvertirCad(word:string):string
+	longitud = length(word)
+	cadenaInver = ""
+	
+	for i in (longitud,1):
+		cadenaInver = cadenaInver + subcadena(word, i, 1)
+	end
+	
+	return cadenaInver
+end
+	
+	
+		## Punto 3
+		
+Def Summatory(matrix[][], size_matrix, row, column):int
+	
+	if row >= size_matrix:
+		return 0
+	end
+	
+	actual_value = matrix[row][column]
+	
+	actual_summ = IsOdd(actual_value, actual_value, 0)
+	
+	remaining_sum = Summatory(matrix, size_matrix, row, column +1)
+	
+	return actual_summ + remaining_sum
+
+end
+
+Def IsOdd(number, odd, even):int
+
+	if number == 0:
+		return 0
+	else:
+		if number%2 == 1:
+			return odd
+		else:
+			return even
+		end
+	end
+end
+
+
+		## Punto 4
+		
+Def ElementList(list[], element, index, actual_index): bool
+
+	if actual_index == index:
+		if list[actual_index] = element:
+			return True
+		else:
+			return False
+		end
+	end
+	
+	if actual_index >= length(list):
+		return False
+	end
+	
+	result = ElementList(list, element, index, actual_index +1)
+	
+	return result
+
+end
+
+		## Punto 5
+		
+Def ExtractDigit (word: string, index:int):int
+
+	if index < 0:
+		return 0
+	end
+	
+	actual_chara = substring(word, index+1, 1)
+	actual_digit = isdigit(actual_chara)
+	
+	if actual_digit == True:
+		return ExtractDigit(word, index - 1)
+	end
+	
+	actual_number = actual_digit * potencia(10, length(word) - index -1)
+	
+	remaining_number = ExtractDigit(word, index - 1)
+	
+	return actual_number, remaining_number
+	
+end
+
+
